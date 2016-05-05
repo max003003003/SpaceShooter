@@ -4,7 +4,11 @@ using System.Collections;
 public class DestroyByContact : MonoBehaviour {
     public GameObject explosion;
     public GameObject playerExploeion;
-
+    void Start()
+    {
+      
+    }
+    
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Back")
         {
@@ -14,9 +18,20 @@ public class DestroyByContact : MonoBehaviour {
         {
             if (other.tag == "Player")
             {
+                GameControl.life--;
                 Instantiate(playerExploeion, transform.position, transform.rotation);
-                
-                Application.LoadLevel("GameOver");
+                if(GameControl.life<1)
+                {
+
+                    Application.LoadLevel("GameOver");
+                    
+                }
+                else
+                {
+                    Application.LoadLevel("Main");
+                }
+
+               
 
             }
             else {
@@ -30,5 +45,8 @@ public class DestroyByContact : MonoBehaviour {
             Destroy(gameObject);
         }
     }
-     
+
+
+    
+
 }
