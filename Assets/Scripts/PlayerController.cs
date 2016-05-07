@@ -20,10 +20,19 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (Input.GetButton("Fire1") && Time.time > nextFire)
-        {
+        {            
+
+           nextFire = Time.time + fireRate;
             
-            nextFire = Time.time + fireRate;
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+    
+           Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            if (GameControl.fire3Way)
+            {
+                Instantiate(shot, new Vector3(shotSpawn.position.x + 1.5f, shotSpawn.position.y, shotSpawn.position.z), shotSpawn.rotation);
+                Instantiate(shot, new Vector3(shotSpawn.position.x - 1.5f, shotSpawn.position.y, shotSpawn.position.z), shotSpawn.rotation);
+            }
+            //Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+
         }
     }
     void FixedUpdate()

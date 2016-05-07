@@ -14,7 +14,7 @@ public class DestroyByContact : MonoBehaviour {
         {
             Destroy( gameObject);
 
-        }else if (other.tag != "Asteroid")
+        }else if (other.tag != "Asteroid"&&other.tag!="Item")
         {
             if (other.tag == "Player")
             {

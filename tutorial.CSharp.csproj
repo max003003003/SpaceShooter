@@ -71,7 +71,6 @@
     <Compile Include="Assets\Done\Done_Scripts\Done_PlayerController.cs" />
     <Compile Include="Assets\Done\Done_Scripts\Done_RandomRotator.cs" />
     <Compile Include="Assets\Done\Done_Scripts\Done_WeaponController.cs" />
-    <Compile Include="Assets\LifeText.cs" />
     <Compile Include="Assets\Resource\Scripts\BulletController.cs" />
     <Compile Include="Assets\Resource\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Resource\Scripts\Orbitcontroller.cs" />
@@ -85,6 +84,9 @@
     <Compile Include="Assets\Scripts\ExplosionController.cs" />
     <Compile Include="Assets\Scripts\GameControl.cs" />
     <Compile Include="Assets\Scripts\GameOverText.cs" />
+    <Compile Include="Assets\Scripts\ItemControl.cs" />
+    <Compile Include="Assets\Scripts\ItemMover.cs" />
+    <Compile Include="Assets\Scripts\LifeText.cs" />
     <Compile Include="Assets\Scripts\Mover.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\textScore.cs" />
