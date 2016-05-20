@@ -8,13 +8,13 @@ public class ItemControl : MonoBehaviour {
     public float timeEffect;
 	void Start () {
         Invoke("SpawnObject", timeEffect);
-        GetComponent<Rigidbody>().velocity = transform.forward * speed;
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+	  gameObject.transform.transform.Translate( 0,0,speed);
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -22,14 +22,19 @@ public class ItemControl : MonoBehaviour {
         {
             if (this.gameObject.tag == "LifeLevel")
             {
+               
                 GameControl.life++;
+                Destroy(gameObject);
             }
             else {
                 gameObject.SetActive(false);
                 GameControl.fire3Way = true;
             }
+
+
         }
-        
+        else { return; }
+
     }
     void SpawnObject()//fire3object time
     {

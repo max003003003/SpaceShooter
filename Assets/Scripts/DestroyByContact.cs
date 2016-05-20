@@ -4,11 +4,14 @@ using System.Collections;
 public class DestroyByContact : MonoBehaviour {
     public GameObject explosion;
     public GameObject playerExploeion;
+    public GameObject scenecontrol;//change scene object
+
     void Start()
     {
-      
+     
     }
-    
+  
+
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Back")
         {
@@ -22,13 +25,21 @@ public class DestroyByContact : MonoBehaviour {
                 Instantiate(playerExploeion, transform.position, transform.rotation);
                 if(GameControl.life<1)
                 {
+                    Invoke("SpawnObject", 2);
+                    //Application.LoadLevel("GameOver");
+                    GameControl.gameOver = true;
+                    Instantiate(scenecontrol, transform.position, transform.rotation);
 
-                    Application.LoadLevel("GameOver");
-                    
                 }
                 else
                 {
-                    Application.LoadLevel("Main");
+                    //Application.LoadLevel("Main");
+                    GameControl.die = true;
+                    Instantiate(scenecontrol, transform.position, transform.rotation);
+                    //Destroy(scenecontrol, 3f);
+
+
+
                 }
 
                
