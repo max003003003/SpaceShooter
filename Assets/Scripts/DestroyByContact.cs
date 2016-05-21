@@ -17,7 +17,7 @@ public class DestroyByContact : MonoBehaviour {
         {
             Destroy( gameObject);
 
-        }else if (other.tag != "Asteroid"&&other.tag!="Item")
+        }else if (other.tag != "Asteroid"&&other.tag!="Item"&&other.tag!="LifeLevel")
         {
             if (other.tag == "Player")
             {
@@ -37,8 +37,7 @@ public class DestroyByContact : MonoBehaviour {
                     GameControl.die = true;
                     Instantiate(scenecontrol, transform.position, transform.rotation);
                     //Destroy(scenecontrol, 3f);
-
-
+                    
 
                 }
 

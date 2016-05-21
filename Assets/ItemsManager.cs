@@ -10,8 +10,9 @@ public class ItemsManager : MonoBehaviour {
 
     void Start()
     {
-        InvokeRepeating("fire3wayDrop", 2, fire3wayitemTime);
-        InvokeRepeating("lifeLevel", 5, lifeitemTime);
+       
+        InvokeRepeating("fire3wayDrop", 12, fire3wayitemTime);
+        InvokeRepeating("lifeLevel", 50, lifeitemTime);
     }
     
     void fire3wayDrop()

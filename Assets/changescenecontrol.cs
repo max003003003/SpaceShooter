@@ -34,7 +34,7 @@ public class changescenecontrol : MonoBehaviour {
         }
         else {
             Application.LoadLevel("GameOver");
-            GameControl.gameOver = false;
+             
         }
     }
   
