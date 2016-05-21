@@ -29,7 +29,7 @@ public class changescenecontrol : MonoBehaviour {
     {
         if (GameControl.die)
         {
-            Application.LoadLevel("Main");
+            Application.LoadLevel(GameControl.getScene());
             GameControl.die = false;
         }
         else {

@@ -4,8 +4,9 @@ using System.Collections;
 public class ItemControl : MonoBehaviour {
 
     // Use this for initialization
-    public float speed;
+    public  float speed;
     public float timeEffect;
+    
 	void Start () {
         Invoke("SpawnObject", timeEffect);
         
@@ -20,7 +21,13 @@ public class ItemControl : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            if (this.gameObject.tag == "LifeLevel")
+            if(this.gameObject.tag=="Speed")
+            {
+                 
+                AsteroidPrefabsController instanceOfB = GameObject.Find("AsteroidCon").GetComponent<AsteroidPrefabsController>();           
+                GameControl.slow = true;
+            }
+           else  if (this.gameObject.tag == "LifeLevel")
             {
                
                 GameControl.life++;
@@ -41,6 +48,8 @@ public class ItemControl : MonoBehaviour {
         if(this.gameObject.tag== "Item")
              GameControl.fire3Way = false;
 
+        if (this.gameObject.tag == "Speed")
+            GameControl.slow = false;
 
         Destroy(gameObject);
     }

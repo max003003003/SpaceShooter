@@ -2,12 +2,18 @@
 using System.Collections;
 
 public class GameControl : MonoBehaviour {
-
+    public static string scene;
     public static int score;
     public static int life = 2;
     public static bool fire3Way = false;
     public static bool gameOver = false;
     public static bool die = false;
+    public static bool slow = false;
+    
+    void Start()
+    {
+        scene = Application.loadedLevelName;
+    }
     
     public static void reset()
     {
@@ -16,6 +22,12 @@ public class GameControl : MonoBehaviour {
         fire3Way = false;
         gameOver = false;
         die = false;
+        slow = false;
         
+    }
+    public static string getScene()
+    {
+        return scene;
+
     }
 }

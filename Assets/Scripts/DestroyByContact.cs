@@ -15,9 +15,15 @@ public class DestroyByContact : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Back")
         {
+            if (gameObject.tag == "Asteroid")
+            {
+                AsteroidPrefabsController instanceOfB = GameObject.Find("AsteroidCon").GetComponent<AsteroidPrefabsController>();
+                instanceOfB.destroy(gameObject);
+            }
             Destroy( gameObject);
+            
 
-        }else if (other.tag != "Asteroid"&&other.tag!="Item"&&other.tag!="LifeLevel")
+        }else if (other.tag != "Asteroid"&&other.tag!="Item"&&other.tag!="LifeLevel" && other.tag != "Speed")
         {
             if (other.tag == "Player")
             {
