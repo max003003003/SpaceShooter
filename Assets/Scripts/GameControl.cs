@@ -9,6 +9,8 @@ public class GameControl : MonoBehaviour {
     public static bool gameOver = false;
     public static bool die = false;
     public static bool slow = false;
+    public static bool fire5Way = false;
+    public static int enemylife = 300;
     
     void Start()
     {
@@ -23,6 +25,7 @@ public class GameControl : MonoBehaviour {
         gameOver = false;
         die = false;
         slow = false;
+        fire5Way = false;
         
     }
     public static string getScene()

@@ -17,7 +17,7 @@ public class AsteroidController : MonoBehaviour {
     void Update()
     {
         if (GameControl.slow)
-            GetComponent<Rigidbody>().velocity = movement * 1.2f;
+             GetComponent<Rigidbody>().velocity = movement * 1.2f;
         else
             GetComponent<Rigidbody>().velocity = movement * speed;
     }

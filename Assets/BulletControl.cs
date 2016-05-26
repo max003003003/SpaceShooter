@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletControl : MonoBehaviour {
+public class BulletControl : MonoBehaviour
+{
 
     // Use this for initialization
     public float speed;
- 
+
     void Start()
     {
-        
+
 
     }
 
@@ -17,5 +18,5 @@ public class BulletControl : MonoBehaviour {
     {
         gameObject.transform.transform.Translate(0, 0, speed);
     }
-
 }
+    

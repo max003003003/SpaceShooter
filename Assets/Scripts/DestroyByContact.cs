@@ -13,6 +13,10 @@ public class DestroyByContact : MonoBehaviour {
   
 
     void OnTriggerEnter(Collider other) {
+        if(other.tag=="enemy")
+        {
+            return;
+        }
         if (other.tag == "Back")
         {
             if (gameObject.tag == "Asteroid")
@@ -23,7 +27,8 @@ public class DestroyByContact : MonoBehaviour {
             Destroy( gameObject);
             
 
-        }else if (other.tag != "Asteroid"&&other.tag!="Item"&&other.tag!="LifeLevel" && other.tag != "Speed")
+        }
+        else if (other.tag != "Asteroid"&&other.tag!="Item"&&other.tag!="LifeLevel" && other.tag != "Speed"  )
         {
             if (other.tag == "Player")
             {
@@ -54,11 +59,12 @@ public class DestroyByContact : MonoBehaviour {
 
                 Instantiate(explosion, transform.position, transform.rotation);
                 GameControl.score += 10;
-
             }
-
-            Destroy(other.gameObject);
-            Destroy(gameObject);
+            
+             Destroy(other.gameObject);
+                Destroy(gameObject);
+             
+            
         }
     }
 

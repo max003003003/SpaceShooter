@@ -30,6 +30,14 @@ public class PlayerController : MonoBehaviour
             {
                 Instantiate(shot, new Vector3(shotSpawn.position.x + 1.5f, shotSpawn.position.y, shotSpawn.position.z), shotSpawn.rotation);
                 Instantiate(shot, new Vector3(shotSpawn.position.x - 1.5f, shotSpawn.position.y, shotSpawn.position.z), shotSpawn.rotation);
+            }else if(GameControl.fire5Way)
+            {               
+                Instantiate(shot, new Vector3(shotSpawn.position.x - 3.0f, shotSpawn.position.y, shotSpawn.position.z), shotSpawn.rotation);
+                Instantiate(shot, new Vector3(shotSpawn.position.x - 1.5f, shotSpawn.position.y, shotSpawn.position.z), shotSpawn.rotation);
+                Instantiate(shot, shotSpawn.position,shotSpawn.rotation);
+                Instantiate(shot, new Vector3(shotSpawn.position.x + 1.5f, shotSpawn.position.y, shotSpawn.position.z), shotSpawn.rotation);
+                Instantiate(shot, new Vector3(shotSpawn.position.x + 3.0f, shotSpawn.position.y, shotSpawn.position.z), shotSpawn.rotation);
+                
             }
             //Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
 

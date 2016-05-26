@@ -33,9 +33,17 @@ public class ItemControl : MonoBehaviour {
                 GameControl.life++;
                 Destroy(gameObject);
             }
-            else {
+            else if(this.gameObject.tag== "fire5way")
+            {
+                GameControl.fire5Way = true;
+                GameControl.fire3Way = false;
+                Destroy(gameObject);
+            }
+            else{
                 gameObject.SetActive(false);
                 GameControl.fire3Way = true;
+                GameControl.fire5Way = false;
+
             }
 
 
@@ -50,6 +58,9 @@ public class ItemControl : MonoBehaviour {
 
         if (this.gameObject.tag == "Speed")
             GameControl.slow = false;
+
+        if (this.gameObject.tag == "fire5way")
+            GameControl.fire5Way = false;
 
         Destroy(gameObject);
     }

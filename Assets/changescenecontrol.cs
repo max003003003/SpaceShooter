@@ -29,6 +29,7 @@ public class changescenecontrol : MonoBehaviour {
     {
         if (GameControl.die)
         {
+            Debug.Log(GameControl.getScene());
             Application.LoadLevel(GameControl.getScene());
             GameControl.die = false;
         }

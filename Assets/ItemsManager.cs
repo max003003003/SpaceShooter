@@ -6,16 +6,18 @@ public class ItemsManager : MonoBehaviour {
     public GameObject ItemContainercontainer;
     public GameObject LifePrefab;
     public GameObject AsteroiSpeed;
+    public GameObject fire5WayPrefab;
     public float fire3wayitemTime;
     public float lifeitemTime;
     public float asteroidTime;
-
+    public float fire5wayitemTime;
     void Start()
     {
        
         InvokeRepeating("fire3wayDrop", 15, fire3wayitemTime);
         InvokeRepeating("lifeLevel", 50, lifeitemTime);
         InvokeRepeating("slowSpeed", 10, asteroidTime);
+   
 
     }
     
