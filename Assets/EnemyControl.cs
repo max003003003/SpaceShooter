@@ -47,7 +47,24 @@ public class EnemyControl : MonoBehaviour {
     }
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("" + other.tag);
+        if (other.tag == "playerbullet" )
+        {
+            if (GameControl.enemylife <= 0)
+            {
+                Destroy(gameObject);
+
+            }
+            else {
+                GameControl.enemylife -= 10;
+            }
+        }
+        else
+        {
+            return;
+        }
+
+      
+            Debug.Log("" + GameControl.enemylife);
     }
 }
 

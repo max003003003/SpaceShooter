@@ -15,6 +15,7 @@ public class DestroyByContact : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if(other.tag=="enemy")
         {
+            Debug.Log("" + other.tag);
             return;
         }
         if (other.tag == "Back")
@@ -62,8 +63,7 @@ public class DestroyByContact : MonoBehaviour {
             }
             
              Destroy(other.gameObject);
-                Destroy(gameObject);
-             
+             Destroy(gameObject);             
             
         }
     }
