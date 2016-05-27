@@ -61,6 +61,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Ball Pack\Resource\Scripts\BulletController.cs" />
+    <Compile Include="Assets\Ball Pack\Resource\Scripts\CameraScript.cs" />
+    <Compile Include="Assets\Ball Pack\Resource\Scripts\Orbitcontroller.cs" />
+    <Compile Include="Assets\Ball Pack\Resource\Scripts\PlayButton.cs" />
+    <Compile Include="Assets\Ball Pack\Resource\Scripts\PlayerControl.cs" />
+    <Compile Include="Assets\Ball Pack\Resource\Scripts\SpeedParticles.cs" />
     <Compile Include="Assets\BosEnemyControl.cs" />
     <Compile Include="Assets\BulletControl.cs" />
     <Compile Include="Assets\Detonator Explosion Framework\Sample Supporting Emitters\DetonatorSprayHelper.cs" />
@@ -97,12 +103,6 @@
     <Compile Include="Assets\ItemsManager.cs" />
     <Compile Include="Assets\MenuControl.cs" />
     <Compile Include="Assets\Particle Ribbon\Scripts\ReverseNormals.cs" />
-    <Compile Include="Assets\Resource\Scripts\BulletController.cs" />
-    <Compile Include="Assets\Resource\Scripts\CameraScript.cs" />
-    <Compile Include="Assets\Resource\Scripts\Orbitcontroller.cs" />
-    <Compile Include="Assets\Resource\Scripts\PlayButton.cs" />
-    <Compile Include="Assets\Resource\Scripts\PlayerControl.cs" />
-    <Compile Include="Assets\Resource\Scripts\SpeedParticles.cs" />
     <Compile Include="Assets\Scripts\AsteroidController.cs" />
     <Compile Include="Assets\Scripts\AsteroidPrefabsController.cs" />
     <Compile Include="Assets\Scripts\DestroyByBound.cs" />
@@ -121,6 +121,8 @@
     <Compile Include="Assets\Scripts\tutorialsceneScrip\TutorialControl.cs" />
     <Compile Include="Assets\Scripts\tutorialsceneScrip\storyText.cs" />
     <Compile Include="Assets\Scripts\tutorialsceneScrip\tutorialasteroidprefabcontrol.cs" />
+    <Compile Include="Assets\TimerControl.cs" />
+    <Compile Include="Assets\TimerControlChangeScene.cs" />
     <Compile Include="Assets\bulletenemycontrol.cs" />
     <Compile Include="Assets\changescenecontrol.cs" />
     <Compile Include="Assets\clock.cs" />

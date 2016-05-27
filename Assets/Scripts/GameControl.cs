@@ -13,6 +13,12 @@ public class GameControl : MonoBehaviour {
     public static bool bos = false;
     public static bool win = false;    
     public static bool timeOut = false;
+    public static int tempMinute;
+    public static int tempSecond;
+
+  
+
+
     
     void Start()
     {

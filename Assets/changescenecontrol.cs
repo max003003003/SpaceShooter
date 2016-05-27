@@ -7,9 +7,12 @@ public class changescenecontrol : MonoBehaviour {
     // Use this for initialization
     public float timefordiechangescene;
     public float timeforgameoverchangescene;
-   
-
+    public static string nextscene;
+     
+    
     void Start () {
+       
+
         if (GameControl.die)
         {
             Invoke("changeScene", timefordiechangescene);
@@ -23,19 +26,41 @@ public class changescenecontrol : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if(GameControl.timeOut)
+        {
+            timefordiechangescene = 0;
+        }
 	}
 
-    
+   public static void changeSceneNow(string name)
+    {
+        Application.LoadLevel(name);
+    }
     void changeScene()//fire3object time
     {
-        if (GameControl.die)
+        GameControl.tempSecond = 0;
+        GameControl.tempMinute = 0;
+        if (GameControl.timeOut)
         {
-            Debug.Log(GameControl.getScene());
-            Application.LoadLevel(GameControl.getScene());
             GameControl.die = false;
+            GameControl.timeOut = false;
+            Application.LoadLevel(nextscene);
+            nextscene = "";
         }
-        else {
+        
+       else if (GameControl.die)
+        {
+            GameControl.die = false;
+                GameControl.timeOut = false;
+                GameControl.gameOver = false;
+                Debug.Log(GameControl.getScene());
+                Application.LoadLevel(GameControl.getScene());
+               
+            
+        }
+        else if(GameControl.gameOver){
+            GameControl.gameOver = false;
+            GameControl.timeOut = false;
             Application.LoadLevel("GameOver");
              
         }

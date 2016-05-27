@@ -17,12 +17,16 @@ public class PlayerController : MonoBehaviour
     public Boundary boundary;
     public GameObject shot;
     public Transform shotSpawn;
+   
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time > nextFire)
-        {            
 
-           nextFire = Time.time + fireRate;
+
+        if (Input.GetButton("Fire1") && Time.time > nextFire)
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+            nextFire = Time.time + fireRate;
             
     
            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
@@ -37,22 +41,45 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        if (GameControl.getScene() == "Satern")
+        {
 
-        Vector3 movement = new Vector3(moveHorizontal, moveVertical,0.0f);
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
 
-        GetComponent<Rigidbody>().velocity = movement * speed;
+            Vector3 movement = new Vector3(-moveHorizontal, -moveVertical, 0.0f);
 
-        GetComponent<Rigidbody>().position = new Vector3
-        (
-            Mathf.Clamp(GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax),
-            
-            Mathf.Clamp(GetComponent<Rigidbody>().position.y, boundary.zMin, boundary.zMax),
-            0.0f
-        );
+            GetComponent<Rigidbody>().velocity = movement * speed;
 
-        GetComponent<Rigidbody>().rotation = Quaternion.Euler(0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
+            GetComponent<Rigidbody>().position = new Vector3
+            (
+                Mathf.Clamp(GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax),
+
+                Mathf.Clamp(GetComponent<Rigidbody>().position.y, boundary.zMin, boundary.zMax),
+                0.0f
+            );
+
+            GetComponent<Rigidbody>().rotation = Quaternion.Euler(0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
+
+        }
+        else {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+
+            Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
+
+            GetComponent<Rigidbody>().velocity = movement * speed;
+
+            GetComponent<Rigidbody>().position = new Vector3
+            (
+                Mathf.Clamp(GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax),
+
+                Mathf.Clamp(GetComponent<Rigidbody>().position.y, boundary.zMin, boundary.zMax),
+                0.0f
+            );
+
+            GetComponent<Rigidbody>().rotation = Quaternion.Euler(0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
+        }
     }
     
 

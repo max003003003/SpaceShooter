@@ -25,6 +25,8 @@ public class BosEnemyControl : MonoBehaviour {
     }
     void Update()
     {
+
+       
         Debug.Log(littleboscontainner.enemycount);
 
         // change to random direction at random intervals
