@@ -4,7 +4,7 @@ using System.Collections;
 public class mainmenu : MonoBehaviour {
     public void mainmenuButton()
     {
-        Application.LoadLevel("menuScene");
+        Application.LoadLevel("map");
     }
     // Use this for initialization
 

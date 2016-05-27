@@ -5,7 +5,7 @@ public class GameOverButtonControl : MonoBehaviour {
 
 	public void MainMenuButton()
     {
-        Application.LoadLevel("menuScene");
+        Application.LoadLevel("map");
         GameControl.reset();
     }
     public void ExitButton()

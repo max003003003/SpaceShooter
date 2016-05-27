@@ -7,7 +7,7 @@ public class TimerControl : MonoBehaviour {
     // Use this for initialization
     public int maxscore;
 	void Start () {
-        GameControl.score = 600;
+  
 	}
 	
 	// Update is called once per frame

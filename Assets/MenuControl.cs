@@ -6,6 +6,14 @@ public class MenuControl : MonoBehaviour {
     {
         Application.LoadLevel("Main");
     }
+    public void loadJupiter()
+    {
+        Application.LoadLevel("Satern");
+    }
+    public void loadSatern()
+    {
+        Application.LoadLevel("Jupiter");
+    }
     public void exitGame()
     {
         Application.Quit(); 
