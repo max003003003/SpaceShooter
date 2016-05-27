@@ -33,18 +33,13 @@ public class ItemControl : MonoBehaviour {
                 GameControl.life++;
                 Destroy(gameObject);
             }
-            else if(this.gameObject.tag== "fire5way")
+            else  
             {
-                GameControl.fire5Way = true;
-                GameControl.fire3Way = false;
+                 
+                GameControl.fire3Way = true;
                 Destroy(gameObject);
             }
-            else{
-                gameObject.SetActive(false);
-                GameControl.fire3Way = true;
-                GameControl.fire5Way = false;
-
-            }
+           
 
 
         }

@@ -16,6 +16,11 @@ public class GameOverText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+        if(GameControl.win)
+        {
+            text.text = "You win";
+            text.text += " \nYour Score is \n" + GameControl.score;
+            GameControl.win = false;
+        }
     }
 }

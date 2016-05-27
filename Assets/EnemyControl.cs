@@ -7,29 +7,25 @@ public class EnemyControl : MonoBehaviour {
     public float maxY ;
     public float minY ;
     public GameObject explosion;
-    public Text text;
+  //  public Text text;
 
     private float tChange = 0; // force new direction in the first Update
     private float randomX ;
     private float randomY ;
     public float moveSpeed;
     public GameObject bullet;
+    public GameObject spawn;
+    public int enemylife = 1000;
     void Start()
     {
-        InvokeRepeating("shoot", 1f, 0.5f);
-        text.text = "" + GameControl.enemylife;
+        InvokeRepeating("shoot",2.5f, 0.5f);
+       
+        //text.text = "" + GameControl.enemylife;
     }
  void Update()
     {
-        if(GameControl.enemylife==0)
-        {
-            
-            text.text = "You Win";
-        }else
-        {
-            text.text = "" + GameControl.enemylife;
-            
-        }
+        Debug.Log(littleboscontainner.enemycount);
+        
         // change to random direction at random intervals
         if (Time.time >= tChange)
         {
@@ -55,30 +51,30 @@ public class EnemyControl : MonoBehaviour {
     }
     void shoot()
     {
-        Instantiate( bullet,new Vector3(gameObject.transform.position.x,gameObject.transform.position.y+2.95f,gameObject.transform.position.z-5.0f), gameObject.transform.rotation);
+       GameObject clone= Instantiate( bullet,new Vector3(gameObject.transform.position.x,gameObject.transform.position.y+2.95f,gameObject.transform.position.z-5.0f), gameObject.transform.rotation) as GameObject;
+        clone.transform.SetParent(spawn.transform);
     }
     void OnTriggerEnter(Collider other)
     {
-
+        
         if (other.tag == "playerbullet" )
         {
-            if (GameControl.enemylife <= 0)
+            Debug.Log(enemylife);
+            if ( enemylife <= 0)
             {
+                Debug.Log(littleboscontainner.enemycount);
+                CancelInvoke();
+                littleboscontainner.enemycount -= 1;
                 Destroy(gameObject);
-
+             
             }
             else {
-                Instantiate(explosion, new Vector3( gameObject.transform.position.x,gameObject.transform.position.y+1.12f,gameObject.transform.position.z), gameObject.transform.rotation);
-                GameControl.enemylife -= 10;
+                Instantiate(explosion, new Vector3( other.gameObject.transform.position.x,other.gameObject.transform.position.y ,other.gameObject.transform.position.z+2), gameObject.transform.rotation);
+                enemylife -= 50;
+                GameControl.score += 50;
             }
         }
-        else
-        {
-            return;
-        }
-
-         
-    }
+     }
 }
 
 

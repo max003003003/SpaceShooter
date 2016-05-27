@@ -10,4 +10,8 @@ public class MenuControl : MonoBehaviour {
     {
         Application.Quit(); 
     }
+    public void tutorial()
+    {
+        Application.LoadLevel("TutorialExplainScene");
+    }
 }

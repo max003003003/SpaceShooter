@@ -10,7 +10,7 @@ public class bulletenemycontrol : MonoBehaviour
 
     void Start()
     {
-
+        Destroy(gameObject,5);
 
     }
 
@@ -22,6 +22,9 @@ public class bulletenemycontrol : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+      
+           
+       
         if (other.tag == "Player")
         {
             GameControl.life--;

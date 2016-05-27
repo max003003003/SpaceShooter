@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BosEnemyControl.cs" />
     <Compile Include="Assets\BulletControl.cs" />
     <Compile Include="Assets\Detonator Explosion Framework\Sample Supporting Emitters\DetonatorSprayHelper.cs" />
     <Compile Include="Assets\Detonator Explosion Framework\System\Detonator.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Assets\ItemManagerForTutorial.cs" />
     <Compile Include="Assets\ItemsManager.cs" />
     <Compile Include="Assets\MenuControl.cs" />
+    <Compile Include="Assets\Particle Ribbon\Scripts\ReverseNormals.cs" />
     <Compile Include="Assets\Resource\Scripts\BulletController.cs" />
     <Compile Include="Assets\Resource\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Resource\Scripts\Orbitcontroller.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="Assets\Scripts\DestroyByBound.cs" />
     <Compile Include="Assets\Scripts\DestroyByContact.cs" />
     <Compile Include="Assets\Scripts\ExplosionController.cs" />
+    <Compile Include="Assets\Scripts\GameAllControl.cs" />
     <Compile Include="Assets\Scripts\GameControl.cs" />
     <Compile Include="Assets\Scripts\GameOverButtonControl.cs" />
     <Compile Include="Assets\Scripts\GameOverText.cs" />
@@ -115,14 +118,23 @@
     <Compile Include="Assets\Scripts\Mover.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\textScore.cs" />
-    <Compile Include="Assets\TutorialControl.cs" />
+    <Compile Include="Assets\Scripts\tutorialsceneScrip\TutorialControl.cs" />
+    <Compile Include="Assets\Scripts\tutorialsceneScrip\storyText.cs" />
+    <Compile Include="Assets\Scripts\tutorialsceneScrip\tutorialasteroidprefabcontrol.cs" />
     <Compile Include="Assets\bulletenemycontrol.cs" />
     <Compile Include="Assets\changescenecontrol.cs" />
+    <Compile Include="Assets\clock.cs" />
+    <Compile Include="Assets\enemyLife.cs" />
     <Compile Include="Assets\enemybulletmovement.cs" />
-    <Compile Include="Assets\storyText.cs" />
+    <Compile Include="Assets\enemycontrols.cs" />
+    <Compile Include="Assets\littleboscontainner.cs" />
+    <Compile Include="Assets\mainmenu.cs" />
+    <Compile Include="Assets\skipButton.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\CrystalPack\Shaders\S_Crystal.shader" />
     <None Include="Assets\Detonator Explosion Framework\Resources\Detonator\Textures\HeatDistort.shader" />
+    <None Include="Assets\Particle Ribbon\readme_Simple_Particle_Ribbon.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

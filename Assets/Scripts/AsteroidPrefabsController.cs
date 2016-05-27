@@ -19,7 +19,7 @@ public class AsteroidPrefabsController : MonoBehaviour {
     public float yMax;
     public float z;
     public float destroyTime; 
-   private ArrayList Storage=new ArrayList();
+    private ArrayList Storage=new ArrayList();
     // declaration
 
     // Use this for initialization
@@ -28,11 +28,12 @@ public class AsteroidPrefabsController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-       
+        
         if ( Time.time > nextFire)
         {
             if (!GameControl.slow)
             {
+                 
                 nextFire = Time.time + rate;
                 AsteroidClone = (GameObject)Instantiate(AsteroiPrefab, new Vector3(Random.Range(xMin, xMax), Random.Range(yMin, yMax), z), Quaternion.identity);
                 float scale = Random.Range(-0.1f, 3);

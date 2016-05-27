@@ -11,7 +11,9 @@ public class changescenecontrol : MonoBehaviour {
 
     void Start () {
         if (GameControl.die)
+        {
             Invoke("changeScene", timefordiechangescene);
+        }
         else if (GameControl.gameOver)
             Invoke("changeScene", timeforgameoverchangescene);
 
