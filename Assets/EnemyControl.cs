@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 public class EnemyControl : MonoBehaviour {
     public float maxX;
     public float minX;
     public float maxY ;
     public float minY ;
+    public GameObject explosion;
+    public Text text;
 
     private float tChange = 0; // force new direction in the first Update
     private float randomX ;
@@ -15,9 +17,19 @@ public class EnemyControl : MonoBehaviour {
     void Start()
     {
         InvokeRepeating("shoot", 1f, 0.5f);
+        text.text = "" + GameControl.enemylife;
     }
  void Update()
     {
+        if(GameControl.enemylife==0)
+        {
+            
+            text.text = "You Win";
+        }else
+        {
+            text.text = "" + GameControl.enemylife;
+            
+        }
         // change to random direction at random intervals
         if (Time.time >= tChange)
         {
@@ -43,10 +55,11 @@ public class EnemyControl : MonoBehaviour {
     }
     void shoot()
     {
-        Instantiate( bullet,new Vector3(gameObject.transform.position.x,gameObject.transform.position.y+2.95f,gameObject.transform.position.z), gameObject.transform.rotation);
+        Instantiate( bullet,new Vector3(gameObject.transform.position.x,gameObject.transform.position.y+2.95f,gameObject.transform.position.z-5.0f), gameObject.transform.rotation);
     }
     void OnTriggerEnter(Collider other)
     {
+
         if (other.tag == "playerbullet" )
         {
             if (GameControl.enemylife <= 0)
@@ -55,6 +68,7 @@ public class EnemyControl : MonoBehaviour {
 
             }
             else {
+                Instantiate(explosion, new Vector3( gameObject.transform.position.x,gameObject.transform.position.y+1.12f,gameObject.transform.position.z), gameObject.transform.rotation);
                 GameControl.enemylife -= 10;
             }
         }
@@ -63,8 +77,7 @@ public class EnemyControl : MonoBehaviour {
             return;
         }
 
-      
-            Debug.Log("" + GameControl.enemylife);
+         
     }
 }
 

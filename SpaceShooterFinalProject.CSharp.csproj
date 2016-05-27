@@ -116,6 +116,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\textScore.cs" />
     <Compile Include="Assets\TutorialControl.cs" />
+    <Compile Include="Assets\bulletenemycontrol.cs" />
     <Compile Include="Assets\changescenecontrol.cs" />
     <Compile Include="Assets\enemybulletmovement.cs" />
     <Compile Include="Assets\storyText.cs" />

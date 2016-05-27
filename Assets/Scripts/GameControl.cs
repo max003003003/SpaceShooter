@@ -11,6 +11,7 @@ public class GameControl : MonoBehaviour {
     public static bool slow = false;
     public static bool fire5Way = false;
     public static int enemylife = 300;
+ 
     
     void Start()
     {
