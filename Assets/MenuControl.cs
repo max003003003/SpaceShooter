@@ -22,4 +22,8 @@ public class MenuControl : MonoBehaviour {
     {
         Application.LoadLevel("TutorialExplainScene");
     }
+    public void endless()
+    {
+        Application.LoadLevel("Endless");
+    }
 }

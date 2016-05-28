@@ -34,6 +34,7 @@ public class ItemsManager : MonoBehaviour {
     }
     void slowSpeed()
     {
+        if(GameControl.getScene()!="Jupiter")
         Instantiate(AsteroiSpeed, ItemContainercontainer.transform.position, ItemContainercontainer.transform.rotation);
     }
 

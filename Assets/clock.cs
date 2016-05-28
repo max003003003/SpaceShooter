@@ -27,7 +27,7 @@ public class clock : MonoBehaviour {
          
         
 
-        if (GameAllControl.minute == 3)
+        if (GameAllControl.minute == 3 && GameControl.scene != "Endless")
         {
             GameControl.timeOut = true;
             GameControl.die = true;

@@ -12,7 +12,7 @@ public class littleboscontainner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if(enemycount<3)
+	    if(enemycount<4)
         {
             Instantiate(littlebosprefab, containner.transform.position, containner.transform.rotation);
             enemycount++;
